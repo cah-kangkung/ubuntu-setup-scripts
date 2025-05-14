@@ -4,15 +4,6 @@ echo "✔ Setting up 9 static workspaces..."
 gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
 
-# Unbind tiling shortcuts (Left, Right, Up, Down)
-echo "⛔ Unbinding directional tiling shortcuts..."
-
-directions=("left" "right" "up" "down")
-for dir in "${directions[@]}"; do
-  gsettings set org.gnome.mutter.keybindings toggle-tiled-${dir} "[]"
-  gsettings set org.gnome.shell.extensions.tiling-assistant tile-${dir}-half "[]"
-done
-
 # Loop over 1 to 9 for workspace switching and moving windows
 for i in {1..9}; do
   echo "⛔ Unbinding Super+$i from application switching..."
@@ -26,19 +17,28 @@ for i in {1..9}; do
   gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-$i "['<Shift><Super>$i']"
 done
 
-# Bind Ctrl+Super+Left/Right to switch workspaces
-echo "✅ Binding Ctrl+Super+Left to switch to the left workspace"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Super>Left']"
+# Workspace navigation with h/l instead of Left/Right
+echo "✅ Binding Ctrl+Super+H to switch to the left workspace"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Super>h']"
 
-echo "✅ Binding Ctrl+Super+Right to switch to the right workspace"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Super>Right']"
+echo "✅ Binding Ctrl+Super+L to switch to the right workspace"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Super>l']"
 
-# Bind Ctrl+Shift+Super+Left/Right to move windows to the left or right workspace
-echo "✅ Binding Ctrl+Shift+Super+Left to move window to the left workspace"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Control><Shift><Super>Left']"
+# Move window to workspace left/right using H/L
+echo "✅ Binding Ctrl+Shift+Super+H to move window to the left workspace"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Control><Shift><Super>h']"
 
-echo "✅ Binding Ctrl+Shift+Super+Right to move window to the right workspace"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Control><Shift><Super>Right']"
+echo "✅ Binding Ctrl+Shift+Super+L to move window to the right workspace"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Control><Shift><Super>l']"
 
-echo "🎉 Done! Workspaces, shortcuts, and tiling settings are all configured."
+# Unbind and rebind other custom keys
+echo "⛔ Unbinding Super+H (minimize)"
+gsettings set org.gnome.desktop.wm.keybindings minimize "[]"
 
+echo "⛔ Unbinding Super+L (lock screen / screensaver)"
+gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
+
+echo "✅ Binding Ctrl+Shift+Super+L to lock screen"
+gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Control><Shift><Super>l']"
+
+echo "🎉 Done! Workspace keys, system shortcuts, and custom keybindings are now configured."
