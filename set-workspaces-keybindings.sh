@@ -39,6 +39,13 @@ echo "⛔ Unbinding Super+L (lock screen / screensaver)"
 gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
 
 echo "✅ Binding Ctrl+Shift+Super+L to lock screen"
-gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Control><Shift><Super>l']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Control><Alt><Super>l']"
+
+echo "⛔ Unbinding Super+V (toggle message tray)"
+gsettings set org.gnome.shell.keybindings toggle-message-tray "['<Super>m']"
+
+echo "✅ Binding Gnome Terminal Tab Switching"
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab '<Primary>Tab'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab '<Primary><Shift>Tab'
 
 echo "🎉 Done! Workspace keys, system shortcuts, and custom keybindings are now configured."
