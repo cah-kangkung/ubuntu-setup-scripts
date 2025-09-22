@@ -31,16 +31,6 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Contro
 echo "✅ Binding Ctrl+Shift+Super+L to move window to the right workspace"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Control><Shift><Super>l']"
 
-# Unbind and rebind other custom keys
-echo "⛔ Unbinding Super+H (minimize)"
-gsettings set org.gnome.desktop.wm.keybindings minimize "[]"
-
-echo "⛔ Unbinding Super+L (lock screen / screensaver)"
-gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
-
-echo "✅ Binding Ctrl+Alt+Super+L to lock screen"
-gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Control><Alt><Super>l']"
-
 echo "⛔ Unbinding Super+V (toggle message tray)"
 gsettings set org.gnome.shell.keybindings toggle-message-tray "['<Super>m']"
 
