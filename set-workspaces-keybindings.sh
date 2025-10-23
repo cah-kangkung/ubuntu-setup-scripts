@@ -71,7 +71,11 @@ echo "✅ Bind Shift+V to toggle-menu"
 dconf write /org/gnome/shell/extensions/clipboard-indicator/toggle-menu "['<Super>V']"
 
 # Forge
-echo "✅ Unbind Shift+Period from tiling shortcuts to make room for Emoji Picker toggle-menu shortcut"
+echo "✅ Unbind Shift+Period from tiling shortcuts"
 dconf write /org/gnome/shell/extensions/forge/keybindings/prefs-open "@as []"
+
+# Emoji Picker
+echo "✅ Unbind Shift+Period from ubuntu default emoji picker"
+gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Super>semicolon']"
 
 echo "🎉 Done! Workspace keys, system shortcuts, and custom keybindings are now configured."
