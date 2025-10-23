@@ -60,4 +60,18 @@ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/k
 echo "✅ Set window switcher to all workspace"
 gsettings set org.gnome.shell.window-switcher current-workspace-only false
 
+# Bind Clipbiard Inidcator
+echo "✅ Enable keybindings"
+dconf write /org/gnome/shell/extensions/clipboard-indicator/enable-keybindings true
+
+echo "✅ Enable Paste on Select"
+dconf write /org/gnome/shell/extensions/clipboard-indicator/paste-on-select true
+
+echo "✅ Bind Shift+V to toggle-menu"
+dconf write /org/gnome/shell/extensions/clipboard-indicator/toggle-menu "['<Super>V']"
+
+# Forge
+echo "✅ Unbind Shift+Period from tiling shortcuts to make room for Emoji Picker toggle-menu shortcut"
+dconf write /org/gnome/shell/extensions/forge/keybindings/prefs-open "@as []"
+
 echo "🎉 Done! Workspace keys, system shortcuts, and custom keybindings are now configured."
