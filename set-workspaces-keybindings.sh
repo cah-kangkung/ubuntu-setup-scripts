@@ -2,7 +2,7 @@
 
 echo "✔ Setting up 9 static workspaces..."
 gsettings set org.gnome.mutter dynamic-workspaces false
-gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 12
 
 # Loop over 1 to 9 for workspace switching and moving windows
 for i in {1..9}; do
@@ -16,6 +16,25 @@ for i in {1..9}; do
   echo "✅ Binding Shift+Super+$i to move window to workspace $i"
   gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-$i "['<Shift><Super>$i']"
 done
+
+# additional workspaces
+echo "✅ Binding Super+0 to switch to workspace 10"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-10 "['<Super>0']"
+
+echo "✅ Binding Shift+Super+0 to move window to workspace 10"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-10 "['<Shift><Super>0']"
+
+echo "✅ Binding Super+'-' to switch to workspace 11"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-11 "['<Super>Minus']"
+
+echo "✅ Binding Shift+Super+'-' to move window to workspace 11"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-11 "['<Shift><Super>Minus']"
+
+echo "✅ Binding Super+'+' to switch to workspace 12"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-12 "['<Super>Plus']"
+
+echo "✅ Binding Shift+Super+'+' to move window to workspace 12"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-12 "['<Shift><Super>Plus']"
 
 # Workspace navigation with h/l instead of Left/Right
 echo "✅ Binding Ctrl+Super+H to switch to the left workspace"
