@@ -8,4 +8,4 @@
 
 ### Restore
 
-`dconf dump / > ~/dconf-backup.conf`
+`dconf load / < dconf-backup.conf`

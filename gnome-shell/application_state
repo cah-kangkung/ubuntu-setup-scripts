@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="apidog.desktop" score="387.04256180673838" last-seen="1773043553"/>
+    <application id="org.gnome.Evince.desktop" score="5.5" last-seen="1772784554"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="2" last-seen="1773120146"/>
+    <application id="apport-gtk.desktop" score="0.53173828125" last-seen="1772699383"/>
+    <application id="microsoft-edge.desktop" score="8505.5740036666393" last-seen="1773120680"/>
+    <application id="libreoffice-calc.desktop" score="16" last-seen="1772786442"/>
+    <application id="org.gnome.Nautilus.desktop" score="25.582382202148438" last-seen="1773120334"/>
+    <application id="update-manager.desktop" score="9.375" last-seen="1772657000"/>
+    <application id="libreoffice-startcenter.desktop" score="0" last-seen="1772784557"/>
+    <application id="xdg-desktop-portal-gnome.desktop" score="0" last-seen="1772781347"/>
+    <application id="org.gnome.Calculator.desktop" score="10" last-seen="1773119960"/>
+    <application id="org.gnome.Terminal.desktop" score="707.84411129355431" last-seen="1773120691"/>
+    <application id="firefox_firefox.desktop" score="6.5" last-seen="1772692921"/>
+    <application id="dbeaver-ce_dbeaver-ce.desktop" score="4321.5068654865026" last-seen="1773044837"/>
+    <application id="discord_discord.desktop" score="1225.029296875" last-seen="1773044840"/>
+    <application id="timedoctor.desktop" score="17171.799356505275" last-seen="1773120252"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="10" last-seen="1773120690"/>
+    <application id="docker-desktop.desktop" score="91.490219324827194" last-seen="1773043316"/>
+    <application id="org.gnome.Settings.desktop" score="8" last-seen="1773120214"/>
+    <application id="windsurf.desktop" score="3106.1674254760146" last-seen="1773043544"/>
+  </context>
+</application-state>
