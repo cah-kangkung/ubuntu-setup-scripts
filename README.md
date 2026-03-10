@@ -8,4 +8,5 @@
 
 ### Restore
 
+`cp -r gnome-shell ~/.local/share/`
 `dconf load / < dconf-backup.conf`
