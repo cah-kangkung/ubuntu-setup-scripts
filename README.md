@@ -8,5 +8,10 @@
 
 ### Restore
 
-`cp -r gnome-shell ~/.local/share/`
 `dconf load / < dconf-backup.conf`
+
+## GNOME SHELL Extenstions
+- forge
+- space-bar
+- clipboard-indicator
+- emoji-copy
